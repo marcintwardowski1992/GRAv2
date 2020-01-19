@@ -24,12 +24,27 @@ public class main {
 
         Board board = new Board();
        /* board.setBoard2(monster1);*/
-        HashMap dupa1 = board.setBoard4();
-        board.printBoard1(dupa1);
+        board = board.setBoard();
+        board.printBoard1(board);
 
         Round round = new Round();
 
-        int pole = board.whereIsPlayer(board);
-        System.out.println(pole);
+
+        for (int i = 0 ; i<=10; i++){
+            System.out.println("-------------Runda------------ " + i);
+            board = round.getMove(board);
+            int currentHP = board.playerCurrentHP(board);
+            if (currentHP<=0){
+                System.out.println("xxxxxxxxxxxxxxxxxxxxxxxx");
+                break;
+            }
+
+       }
+       if (board.whereIsPlayer(board)==10){
+            System.out.println("WON");
+        }
+       board.whereIsPlayer(board);
+        board.playerCurrentHP(board);
+
     }
 }
