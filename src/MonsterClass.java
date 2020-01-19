@@ -3,6 +3,9 @@
  */
 public class MonsterClass extends MonsterRandomGenerator {
 
+
+
+
     int monsterID;
     String race;
     int HP;

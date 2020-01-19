@@ -3,7 +3,7 @@ import java.util.Random;
 /**
  * Created by adami on 14.01.2020.
  */
-public class MonsterRandomGenerator{
+public class MonsterRandomGenerator {
 
 
 
@@ -30,17 +30,36 @@ public class MonsterRandomGenerator{
                 y.setHP(randomDeliver().nextInt(100-70+1)+70);
                 y.setAT((randomDeliver().nextInt(100-70+1)+70));
                 break;
+            case 4:
+                y.setRace("Pusto");
+                y.setHP(randomDeliver().nextInt(1));
+                y.setAT(randomDeliver().nextInt(1));
+                break;
+            case 5:
+                y.setRace("Pusto");
+                y.setHP(randomDeliver().nextInt(1));
+                y.setAT(randomDeliver().nextInt(1));
+                break;
         }
     }
 
     int randomIntGenerator(){
         Random generator = new Random();
-        int i = generator.nextInt(3-1+1)+1;
+        int i = generator.nextInt(5-1+1)+1;
         return i;
     }
 
     Random randomDeliver(){
         Random generator = new Random();
         return generator;
+    }
+
+    void playerGenerator(MonsterClass p1){
+
+
+        p1.setHP((randomDeliver().nextInt(1000-100+1)+100));
+        p1.setAT((randomDeliver().nextInt(1000-100+1)+100));
+        p1.setMonsterID(0);
+        p1.setRace("Człowiek");
     }
 }
